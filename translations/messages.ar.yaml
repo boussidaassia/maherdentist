@@ -1,0 +1,107 @@
+note: ملاحظه
+tip: ارشاد
+not_available: غير متاح
+mit_license: رخصة MIT
+http_error.name: "خطأ {status_code, number}"
+http_error.description: "يوجد خطأ غير معروف (HTTP {status_code, number}) الذى يمنع طلبك."
+http_error.suggestion: "اعد محاوله تحميل هذه الصفحه مره اخرى فى غضون دقائق او <a href=\"{url}\">ارجع الى الصفحه الرئيسيه</a>."
+http_error_403.description: ليس لديك إذن للوصول إلى هذا المورد.
+http_error_403.suggestion: اطلب من مديرك أو مسؤول النظام منحك حق الوصول إلى هذا المورد.
+http_error_404.description: لم نتمكن من العثور على الصفحة التي طلبتها.
+http_error_404.suggestion: "تحقق من أي خطأ إملائي في العنوان او <a href=\"{url}\">ارجع الى الصفحه الرئيسيه</a>."
+http_error_500.description: There was an internal server error.
+http_error_500.suggestion: "اعد محاوله تحميل هذه الصفحه مره اخرى فى غضون دقائق او <a href=\"{url}\">ارجع الى الصفحه الرئيسيه</a>."
+title.homepage: "أهلا بك في تطبيق <strong>سيمفوني التجريبى</strong>"
+title.source_code: رمز المصدر المستخدم لتقديم هذه الصفحة
+title.controller_code: كود المضبط
+title.twig_template_code: Twig كود قالب
+title.login: تسجيل دخول امن
+title.post_list: قائمه المنشورات
+title.edit_post: "تعديل منشور #{id, number}"
+title.add_comment: اضافه تعليق
+title.comment_error: يوجد خطأفى نشر هذا التعليق
+title.edit_user: تعديل المستخدم
+title.change_password: تغير الباسوورد
+action.show: عرض
+action.show_post: عرض المنشور
+action.show_code: عرض الكود
+action.edit: تعديل
+action.edit_post: تعديل المنشور
+action.save: حفظ التغيرات
+action.delete_post: حذف المنشور
+delete_post_modal.title: هل انت متاكد من حذف هذا المنشور؟
+delete_post_modal.body: هذا الاجراء لايمكن ان لا يتم.
+label.delete_post: حذف منشور
+label.cancel: الغاء
+action.create_post: انشاء منشور جديد
+label.create_post: انشاء منشور
+label.save_and_create_new: حفظ وانشاء جديد
+action.back_to_list: الرجوع لقائمه المنشورات
+action.publish_comment: نشر تعليق
+action.sign_in: تسجيل الدخول
+action.browse_app: تصفح التطبيق
+action.browse_admin: تصفح لوحه تحكم الاداره
+action.edit_user: تعديل المستخدم
+action.change_password: تغير الباسوورد
+action.close: أغلق
+label.title: لقب
+label.author: المؤلف
+label.author_email: ايميل المؤلف
+label.username: اسم المستخدم
+label.fullname: الاسم الكامل
+label.email: ايميل
+label.password: باسوورد
+label.current_password: الباسوورد الحالى
+label.new_password: باسوورد جديد
+label.new_password_confirm: تاكيد الباسوورد
+label.role: دور
+label.content: محتوى
+label.summary: ملخص
+label.published_at: نشر فى
+label.tags: العلامات
+label.actions: أجراءات
+title.post_new: انشاء المنشور
+action.edit_contents: عدل المحتويات
+menu.toggle_nav: تبديل التنقل
+menu.choose_language: اختر لغه
+menu.post_list: قائمه المنشورات
+menu.back_to_blog: الرجوع الى المدونه
+menu.homepage: الرئيسيه
+menu.admin: لوحه التحكم
+menu.user: الحساب
+menu.logout: تسجيل الخروج
+menu.rss: منشورات المدونه RSS
+menu.search: بحث
+post.to_publish_a_comment: لنشر تعليق
+post.num_comments: "{count, plural, one {# تعليق} other {# تعليقات}}"
+post.commented_on: علق على
+post.no_comments: كن اول من يعلق على هذا المنشور.
+post.no_posts_found: لا يوجد منشورات.
+post.created_successfully: "تم انشاء المنشور بنجاح!"
+post.updated_successfully: "تم تحديث المنشور بنجاح!"
+post.deleted_successfully: "تم حدف المنشور بنجاح!"
+post.search_for: بحث عن...
+post.search_no_results: لا يوجد نتائج
+user.updated_successfully: "تم تحديث المستخدم بنجاح!"
+notification.comment_created: "منشورك استقبل تعليق!"
+notification.comment_created.description: "منشورك \"{title}\" استقبل تعليق جديد. تستطيع قراءه التعليق عن طريق متابعه <a href=\"{link}\">هذا الرابط</a>"
+help.app_description: "هذا هو <strong>تطبيق تجريبى</strong> تم بناءه بواسطه اطار سيمفوني لتوضيح الطريقة الموصى بها لتطوير تطبيقات سيمفوني."
+help.show_code: "اظغط على هذا الزر لعرض كود <strong>المتحكم</strong> و <strong>القالب</strong> المستخدم لعرض هذه الصفحه."
+help.browse_app: "استعرض <strong>جزئ العام</strong> لدى هذا التطبيق التجريبى."
+help.browse_admin: "استعرض <strong>لوحه تحكم الاداره</strong> لدى هذا التطبيق التجريبى."
+help.login_users: حاول أي من المستخدمين التاليين
+help.role_user: مستخدم عادى
+help.role_admin: مدير
+help.reload_fixtures: "إذا لم يعمل هؤلاء المستخدمون ، فأعد تحميل تركيبات التطبيق عن طريق تشغيل هذا الأمر من خلال محرر الاوامر:"
+help.add_user: "إذا كنت ترغب في إنشاء مستخدمين جدد ، فقم بتشغيل هذا الأمر الآخر:"
+help.more_information: "لمزيد من المعلومات, راجع <a href=\"https://symfony.com/doc\">مستند سيمفوني</a>."
+help.post_summary: لا يمكن أن تحتوي الملخصات على محتويات Markdown أو HTML; فقط نص عادي.
+help.post_publication: حدد التاريخ في المستقبل لجدولة نشر منشور المدونة.
+help.post_content: استخدم Markdown لتنسيق محتويات مشاركة المدونة. HTML مسموح به أيضًا.
+help.comment_content: سيتم الإشراف على التعليقات التي لا تلتزم بمدونة قواعد السلوك الخاصة بنا.
+info.change_password: بعد تغيير كلمة المرور الخاصة بك ، سيتم تسجيل خروجك من التطبيق.
+rss.title: مدونه سيمفوني التجريبيه
+rss.description: أحدث المشاركات المنشورة على مدونه سيمفوني التجريبيه
+paginator.previous: السابق
+paginator.next: التالى
+paginator.current: (الحالى)

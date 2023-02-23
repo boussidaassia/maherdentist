@@ -1,0 +1,44 @@
+{#
+   This is the base template of the all backend pages. Since this layout is similar
+   to the global layout, we inherit from it to just change the contents of some
+   blocks. In practice, backend templates are using a three-level inheritance,
+   showing how powerful, yet easy to use, is Twig's inheritance mechanism.
+   See https://symfony.com/doc/current/templates.html#template-inheritance-and-layouts
+#}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin') }}
+    <!-- in the <head> section -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css"/>
+
+
+<!-- before the closing <body> tag -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+
+{% endblock %}
+
+{% block header_navigation_links %}
+{#    <li>#}
+{#        <a href="{{ path('admin_post_index') }}">#}
+{#            <i class="fa fa-list-alt" aria-hidden="true"></i> {{ 'menu.post_list'|trans }}#}
+{#        </a>#}
+{#    </li>#}
+{#    <li>#}
+{#        <a href="{{ path('blog_index') }}">#}
+{#            <i class="fa fa-home" aria-hidden="true"></i> {{ 'menu.back_to_blog'|trans }}#}
+{#        </a>#}
+{#    </li>#}
+    <li>
+        <a href="{{ path('admin_patient_index') }}">
+            <i class="fa fa-list-alt" aria-hidden="true"></i> {{ 'menu.patient_list'|trans }}
+        </a>
+    </li>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('admin') }}
+{% endblock %}
