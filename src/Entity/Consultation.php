@@ -27,7 +27,7 @@ use function Symfony\Component\String\u;
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 #[ORM\Entity]
-#[ORM\Table(name: 'symfony_demo_comment')]
+#[ORM\Table(name: 'consultation')]
 class Consultation
 {
     #[ORM\Id]
@@ -40,7 +40,6 @@ class Consultation
     private ?Patient $patient= null;
 
     #[ORM\Column(type: Types::TEXT)]
-    #[Assert\NotBlank(message: 'comment.blank')]
     #[Assert\Length(min: 5, minMessage: 'comment.too_short', max: 10000, maxMessage: 'comment.too_long')]
     private ?string $content = null;
 
@@ -50,6 +49,9 @@ class Consultation
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $author = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $montant = null;
 
     public function __construct()
     {
@@ -99,13 +101,25 @@ class Consultation
         $this->author = $author;
     }
 
-    public function getPost(): ?Post
+    public function getPatient(): ?Patient
     {
         return $this->patient;
     }
 
-    public function setPost(Patient $patient): void
+    public function setPatient(Patient $patient): void
     {
         $this->patient = $patient;
     }
+    public function getMontant(): ?int
+    {
+        return $this->montant;
+    }
+
+    public function setMontant(?int $montant): self
+    {
+        $this->montant = $montant;
+
+        return $this;
+    }
+
 }

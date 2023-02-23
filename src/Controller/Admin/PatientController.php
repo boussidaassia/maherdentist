@@ -11,14 +11,19 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Consultation;
 use App\Entity\Patient;
 use App\Entity\User;
+use App\Event\ConsultationCreatedEvent;
+use App\Form\ConsultationType;
 use App\Form\PatientType;
 use App\Repository\PatientRepository;
 use App\Security\PatientVoter;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Id;
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\HttpFoundation\Request;
@@ -63,10 +68,10 @@ class PatientController extends AbstractController
         #[CurrentUser] User $user,
         Request $request,
         PatientRepository $patients,
-       
+
     ): Response {
         $authorPatients = $patients->findBy(['docteur' => $user], ['date' => 'DESC']);
-        
+
 
         return $this->render('admin/patient/index.html.twig', ['patients' => $authorPatients]);
     }
@@ -175,7 +180,7 @@ class PatientController extends AbstractController
 //        if (!$this->isCsrfTokenValid('delete', $token)) {
   //          return $this->redirectToRoute('admin_patient_index');
     //    }
-      
+
         // Delete the tags associated with this patient patient. This is done automatically
         // by Doctrine, except for SQLite (the database used in this application)
         // because foreign key support is not enabled by default in SQLite
@@ -188,4 +193,52 @@ class PatientController extends AbstractController
 
         return $this->redirectToRoute('admin_patient_index');
     }
+
+
+
+    /**
+     * NOTE: The ParamConverter mapping is required because the route parameter
+     * (patientSlug) doesn't match any of the Doctrine entity properties (slug).
+     *
+     * See https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html#doctrine-converter
+     */
+    #[Route('/consultation/{patient}/new', methods: ['POST'], name: 'consultation_new')]
+    #[IsGranted('IS_AUTHENTICATED')]
+    public function consultationNew(
+        #[CurrentUser] User $user,
+        Request $request,
+        Patient $patient,
+        EventDispatcherInterface $eventDispatcher,
+        EntityManagerInterface $entityManager,
+    ): Response {
+        $consultation = new Consultation();
+        $consultation->setAuthor($user);
+        $patient->addConsultation($consultation);
+
+        $form = $this->createForm(ConsultationType::class, $consultation);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($consultation);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_patient_show', ['id' => $patient->getId()]);
+        }
+
+        return $this->render('admin/patient/consultation_form_error.html.twig', [
+            'patient' => $patient,
+            'form' => $form,
+        ]);
+    }
+
+    public function consultationForm(Patient $patient): Response
+    {
+        $form = $this->createForm(ConsultationType::class);
+
+        return $this->render('admin/patient/_consultation_form.html.twig', [
+            'patient' => $patient,
+            'form' => $form,
+        ]);
+    }
+
 }

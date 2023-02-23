@@ -20,7 +20,7 @@ title.login: Secure Sign in
 title.post_list: Patient List
 title.edit_patient: "Edit patient #{id, number}"
 title.add_comment: Add a comment
-title.comment_error: There was an error publishing your comment
+title.comment_error: There was an error publishing your consultation
 title.edit_user: Edit user
 title.change_password: Change password
 action.show: Show
@@ -39,6 +39,7 @@ label.create_patient: Create patient
 label.save_and_create_new: Save and create new
 action.back_to_list: Back to the Patient List
 action.publish_comment: Publish comment
+action.publish_consultation: add consultation
 action.sign_in: Sign in
 action.browse_app: Browse application
 action.browse_admin: Browse backend
@@ -59,6 +60,7 @@ label.role: Role
 label.content: Content
 label.summary: Summary
 label.published_at: Published at
+label.added_at: Added at
 label.tags: Tags
 label.actions: Actions
 title.patient_new: Patient creation
@@ -74,9 +76,9 @@ menu.logout: Logout
 menu.rss: Blog patients RSS
 menu.search: Search
 patient.to_publish_a_comment: to publish a comment
-patient.num_comments: "{count, plural, one {# comment} other {# comments}}"
-patient.commented_on: commented on
-patient.no_comments: Be the first to comment on this patient.
+patient.num_consultations: "consultation(s)"
+patient.consultationed_on: on
+patient.no_consultations: Add first consultation for this patient.
 patient.no_patients_found: No patients found.
 patient.created_successfully: "Patient created successfully!"
 patient.updated_successfully: "Patient updated successfully!"

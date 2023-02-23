@@ -11,7 +11,8 @@
 
 namespace App\Form;
 
-use App\Entity\consultation;
+use App\Entity\Consultation;
+use App\Form\Type\DateTimePickerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -41,8 +42,13 @@ class ConsultationType extends AbstractType
         // $builder->add('content', null, ['required' => false]);
 
         $builder
+            ->add('publishedAt', DateTimePickerType::class, [
+                'label' => 'label.added_at',
+            ])
+            ->add('montant', null, [
+            ])
             ->add('content', TextareaType::class, [
-                'help' => 'help.comment_content',
+                'label' => 'label.content',
             ])
         ;
     }
@@ -53,7 +59,7 @@ class ConsultationType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => consultation::class,
+            'data_class' => Consultation::class,
         ]);
     }
 }

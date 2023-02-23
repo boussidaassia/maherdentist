@@ -16,12 +16,14 @@ title.source_code: Le code source utilisé pour afficher cette page
 title.controller_code: Code du contrôleur
 title.twig_template_code: Code du template Twig
 title.add_comment: Laisser un commentaire
+title.add_consultation: Ajouter consultation
 title.comment_error: Il y a eu une erreur lors de la publication de votre commentaire.
 title.edit_user: "Modifier l'utilisateur"
 title.change_password: Modifier le mot de passe
 action.show: Voir
 action.back_to_list: Retour à la liste des patients
 action.publish_comment: Publier
+action.publish_consultation: Ajouter
 action.sign_in: Connectez-vous
 action.browse_app: "Naviguer sur l'application"
 action.browse_admin: "Naviguer sur l'admin"
@@ -43,6 +45,7 @@ title.login: Connexion sécurisée
 label.content: Contenu
 label.summary: Résumé
 label.published_at: Publié le
+label.added_at: Ajouté le
 label.tags: Tags
 label.actions: Actions
 action.edit_contents: Modifier le contenu
@@ -82,7 +85,9 @@ action.save: Enregistrer
 
 post.to_publish_a_comment: pour publier un commentaire
 post.num_comments: "{count, plural, one {# commentaire} other {# commentaires}}"
+patient.num_consultations: "consultation(s)"
 post.commented_on: commenté le
+patient.consultationed_on: le
 
 post.no_posts_found: Aucun patient trouvé.
 post.created_successfully: "Patient créé avec succès !"
@@ -108,7 +113,7 @@ title.edit_post: "Modifier le patient #{id, number}"
 
 patient.to_publish_a_comment: pour publier un commentaire
 patient.commented_on: commenté le
-patient.no_comments: Soyez le premier à commenter cet patient.
+patient.no_consultations: Ajouter premier consultation pour ce patient.
 patient.no_patients_found: Aucun patient trouvé.
 patient.created_successfully: "Patient créé avec succès !"
 patient.updated_successfully: "Patient mis à jour avec succès !"

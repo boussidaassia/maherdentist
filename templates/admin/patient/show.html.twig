@@ -20,22 +20,40 @@
     <div class="well">
         <p class="m-b-0"><strong>{{ 'label.montantTotal'|trans }}</strong>: {{ patient.montantTotal }}</p>
     </div>
+       <div id="post-add-comment" class="well">
+           {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
+        their credentials (login + password) during this session. If they
+        are automatically logged via the 'Remember Me' functionality, they won't
+        be able to add a consultation.
+        See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
+           #}
+           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+               {{ render(controller('App\\Controller\\Admin\\PatientController::consultationForm', {'id': patient.id})) }}
 
+           {% endif %}
+       </div>
+
+       <h3>
+           <i class="fa fa-file-archive" aria-hidden="true"></i> {{ patient.consultations|length }} {{ 'patient.num_consultations'|trans  }}
+       </h3>
+
+       {% for consultation in patient.consultations %}
+           <div class="row post-comment">
+               <a name="consultation_{{ consultation.id }}"></a>
+               <h4 class="col-sm-4">
+                    {{ 'patient.consultationed_on'|trans }}  : <strong>{{ consultation.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+                   <br>
+                   {{ "label.montantTotal"|trans }} : <strong>{{ consultation.montant  }}</strong>
+               </h4>
+               <div class="col-sm-8">
+                   {{ consultation.content|markdown_to_html|sanitize_html }}
+               </div>
+           </div>
+       {% else %}
+           <div class="post-comment">
+               <p>{{ 'patient.no_consultations'|trans }}</p>
+           </div>
+       {% endfor %}
 </div>
 {% endblock %}
 
-{% block sidebar %}
-    <div class="section">
-        <a href="{{ path('admin_patient_edit', {id: patient.id}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_contents'|trans }}
-        </a>
-    </div>
-
-    <div class="section">
-        {{ include('admin/patient/_delete_form.html.twig', {patient: patient}, with_context = false) }}
-    </div>
-
-    {{ parent() }}
-
-    {{ show_source_code(_self) }}
-{% endblock %}

@@ -38,6 +38,7 @@ label.create_post: انشاء منشور
 label.save_and_create_new: حفظ وانشاء جديد
 action.back_to_list: الرجوع لقائمه المنشورات
 action.publish_comment: نشر تعليق
+action.publish_consultation: تسجيل
 action.sign_in: تسجيل الدخول
 action.browse_app: تصفح التطبيق
 action.browse_admin: تصفح لوحه تحكم الاداره
@@ -58,6 +59,7 @@ label.role: دور
 label.content: محتوى
 label.summary: ملخص
 label.published_at: نشر فى
+label.added_at: انشأ فى
 label.tags: العلامات
 label.actions: أجراءات
 title.post_new: انشاء المنشور
@@ -73,9 +75,10 @@ menu.logout: تسجيل الخروج
 menu.rss: منشورات المدونه RSS
 menu.search: بحث
 post.to_publish_a_comment: لنشر تعليق
-post.num_comments: "{count, plural, one {# تعليق} other {# تعليقات}}"
-post.commented_on: علق على
+patient.num_consultations: "منشور"
+patient.consultationed_on: فى
 post.no_comments: كن اول من يعلق على هذا المنشور.
+patient.no_consultations: انشأ اول منشور
 post.no_posts_found: لا يوجد منشورات.
 post.created_successfully: "تم انشاء المنشور بنجاح!"
 post.updated_successfully: "تم تحديث المنشور بنجاح!"

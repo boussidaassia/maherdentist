@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PatientRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -35,7 +37,18 @@ class Patient
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTime $date = null;
+    /**
+     * @var Collection<int, Consultation>
+     */
+    #[ORM\OneToMany(mappedBy: 'patient', targetEntity: Consultation::class, cascade: ['persist'], orphanRemoval: true)]
+    #[ORM\OrderBy(['publishedAt' => 'DESC'])]
+    private Collection $consultations;
 
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+        $this->consultations = new ArrayCollection();
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -91,7 +104,11 @@ class Patient
 
     public function getMontantTotal(): ?int
     {
-        return $this->montantTotal;
+        $tt = 0;
+        foreach ($this->consultations as $consultation){
+            $tt += $consultation->getMontant();
+        }
+        return $tt;
     }
 
     public function setMontantTotal(?int $montantTotal): self
@@ -124,4 +141,26 @@ class Patient
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Consultation>
+     */
+    public function getConsultations(): Collection
+    {
+        return $this->consultations;
+    }
+
+    public function addConsultation(Consultation $consultation): void
+    {
+        $consultation->setPatient($this);
+        if (!$this->consultations->contains($consultation)) {
+            $this->consultations->add($consultation);
+        }
+    }
+
+    public function removeConsultation(Consultation $consultation): void
+    {
+        $this->consultations->removeElement($consultation);
+    }
+
 }
