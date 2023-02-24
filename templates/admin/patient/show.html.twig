@@ -45,8 +45,14 @@
                    <br>
                    {{ "label.montantTotal"|trans }} : <strong>{{ consultation.montant  }}</strong>
                </h4>
-               <div class="col-sm-8">
+               <div class="col-sm-7">
                    {{ consultation.content|markdown_to_html|sanitize_html }}
+               </div>
+               <div class="col-sm-1">
+
+                   <a href="{{ path('admin_consultation_delete', {id: consultation.id}) }}" class="btn btn-sm btn-danger delete " title="{{ 'action_delete'|trans }}">
+                       <i class="fa fa-trash" aria-hidden="true" ></i>
+                   </a>
                </div>
            </div>
        {% else %}

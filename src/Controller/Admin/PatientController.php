@@ -240,5 +240,19 @@ class PatientController extends AbstractController
             'form' => $form,
         ]);
     }
+    /**
+     * Deletes a Patient entity.
+     */
+    #[Route('/consultation/{id<\d+>}/delete', methods: ['GET', 'POST'], name:  'admin_consultation_delete')]
+    public function deleteConsultation(Request $request, Consultation $consultation, EntityManagerInterface $entityManager): Response
+    {
 
+        $patient = $consultation->getPatient();
+        $entityManager->remove($consultation);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'consultation.deleted_successfully');
+
+        return $this->redirectToRoute('admin_patient_show', ['id'=>$patient->getId()]);
+    }
 }
