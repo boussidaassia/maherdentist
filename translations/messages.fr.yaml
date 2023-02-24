@@ -113,7 +113,7 @@ title.edit_post: "Modifier le patient #{id, number}"
 
 patient.to_publish_a_comment: pour publier un commentaire
 patient.commented_on: commenté le
-patient.no_consultations: Ajouter premier consultation pour ce patient.
+patient.no_consultations: Ajouter une consultation pour ce patient.
 patient.no_patients_found: Aucun patient trouvé.
 patient.created_successfully: "Patient créé avec succès !"
 patient.updated_successfully: "Patient mis à jour avec succès !"

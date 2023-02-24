@@ -75,10 +75,11 @@ menu.user: Account
 menu.logout: Logout
 menu.rss: Blog patients RSS
 menu.search: Search
+title.add_consultation: Add consultation
 patient.to_publish_a_comment: to publish a comment
 patient.num_consultations: "consultation(s)"
 patient.consultationed_on: on
-patient.no_consultations: Add first consultation for this patient.
+patient.no_consultations: Add consultation for this patient.
 patient.no_patients_found: No patients found.
 patient.created_successfully: "Patient created successfully!"
 patient.updated_successfully: "Patient updated successfully!"
