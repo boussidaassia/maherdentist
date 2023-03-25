@@ -45,7 +45,7 @@ class ConsultationType extends AbstractType
             ->add('publishedAt', DateTimePickerType::class, [
                 'label' => 'label.added_at',
             ])
-            ->add('montant', null, [
+            ->add('montant', null, ['label' => 'label.montantpaye',
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'label.content',

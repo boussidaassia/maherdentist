@@ -35,6 +35,7 @@ use Omines\DataTablesBundle\Adapter\ArrayAdapter;
 use Omines\DataTablesBundle\Column\TextColumn;
 use Omines\DataTablesBundle\DataTableFactory;
 use Omines\DataTablesBundle\Adapter\Doctrine\ORMAdapter;
+use Symfony\Component\HttpKernel\Attribute\Cache;
 
 /**
  * Controller used to manage patient contents in the backend.
@@ -62,17 +63,48 @@ class PatientController extends AbstractController
      *     could move this annotation to any other controller while maintaining
      *     the route name and therefore, without breaking any existing link.
      */
-    #[Route('/' , name: 'admin_index')]
-    #[Route('/' , name: 'admin_patient_index')]
-    public function index(
-        #[CurrentUser] User $user,
-        Request $request,
-        PatientRepository $patients,
+    //#[Route('/' , name: 'admin_index')]
+    //#[Route('/' , name: 'admin_patient_index')]
+    //public function index(
+    //   #[CurrentUser] User $user,
+    //    Request $request,
+    //   PatientRepository $patients,
 
-    ): Response {
+    //): Response {
+    //    $authorPatients = $patients->findBy(['docteur' => $user], ['date' => 'DESC']);
+
+
+   //     return $this->render('admin/patient/index.html.twig', ['patients' => $authorPatients]);
+   // }
+
+
+
+
+ /**
+     * NOTE: For standard formats, Symfony will also automatically choose the best
+     * Content-Type header for the response.
+     *
+     * See https://symfony.com/doc/current/routing.html#special-parameters
+     */
+
+
+    #[Route('/' , defaults: ['page' => '1', '_format' => 'html'], methods: ['GET'], name: 'admin_index')]
+    #[Route('/' , defaults: ['page' => '1', '_format' => 'html'], methods: ['GET'], name: 'admin_patient_index')]
+    #[Route('/', defaults: ['page' => '1', '_format' => 'html'], name: 'patient_index')]
+    #[Route('/rss.xml', defaults: ['page' => '1', '_format' => 'xml'], name: 'patient_rss')]
+    #[Route('/page/{page<[1-9]\d{0,8}>}', defaults: ['_format' => 'html'], name: 'patient_index_paginated')]
+    #[Cache(smaxage: 10)]
+    public function index(#[CurrentUser] User $user,Request $request, int $page, string $_format, PatientRepository $patients): Response
+    {   $tag = null;
         $authorPatients = $patients->findBy(['docteur' => $user], ['date' => 'DESC']);
+        $latestPatients = $patients->findBydoc($page,$user);
+        return $this->render('admin/patient/index.'.$_format.'.twig', [
+            'paginator' => $latestPatients,
+            'patients' => $authorPatients,
+            'tagName' => $tag?->getName(),
+        ]);
 
-
+        
         return $this->render('admin/patient/index.html.twig', ['patients' => $authorPatients]);
     }
 

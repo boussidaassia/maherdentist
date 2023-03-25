@@ -30,6 +30,12 @@ class Patient
 
     #[ORM\Column(nullable: true)]
     private ?int $montantTotal = null;
+    
+   
+    
+    #[ORM\Column(nullable: true)]
+    private ?int $montantDu = null;
+    
 
     #[ORM\ManyToOne(inversedBy: 'patients')]
     #[ORM\JoinColumn(nullable: true)]
@@ -110,6 +116,7 @@ class Patient
         }
         return $tt;
     }
+   
 
     public function setMontantTotal(?int $montantTotal): self
     {
@@ -117,7 +124,17 @@ class Patient
 
         return $this;
     }
+    public function getMontantDu(): ?int
+    {
+        return $this->montantDu;
+    }
 
+    public function setMontantDu(?int $montantDu): self
+    {
+        $this->montantDu = $montantDu;
+
+        return $this;
+    }
     public function getDocteur(): ?User
     {
         return $this->docteur;

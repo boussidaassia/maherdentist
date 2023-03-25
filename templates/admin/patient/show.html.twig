@@ -8,7 +8,7 @@
 
     <p class="patient-metadata">
         <span class="metadata"><i class="fa fa-calendar"></i> {{ patient.date|format_datetime('long', 'medium', '', 'UTC') }}</span>
-{#        <span class="metadata"><i class="fa fa-user"></i> {{ patient.docteur.fullName }}</span>#}
+{ <span class="metadata"><i class="fa fa-user"></i> {{ patient.docteur.fullName }}</span>}
     </p>
 
     <div class="well">
@@ -16,6 +16,9 @@
     </div>
     <div class="well">
         <p class="m-b-0"><strong>{{ 'label.telephone'|trans }}</strong>: {{ patient.telephone }}</p>
+    </div>
+    <div class="well">
+        <p class="m-b-0"><strong>{{ 'label.montantDu'|trans }}</strong>: {{ patient.montantDu }}</p>
     </div>
     <div class="well">
         <p class="m-b-0"><strong>{{ 'label.montantTotal'|trans }}</strong>: {{ patient.montantTotal }}</p>
@@ -27,8 +30,8 @@
         be able to add a consultation.
         See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
            #}
-           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-               {{ render(controller('App\\Controller\\Admin\\PatientController::consultationForm', {'id': patient.id})) }}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                          {{ render(controller('App\\Controller\\Admin\\PatientController::consultationForm', {'id': patient.id})) }}
 
            {% endif %}
        </div>

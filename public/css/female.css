@@ -1,0 +1,216 @@
+.navbar-default {
+    background-color: #51c447;
+    border-color: transparent;
+}
+
+#login {
+    background-image: url(/assets/images/login-v3.jpg);
+    height: auto;
+    background-size: cover;
+    min-height: 100%;
+    background-repeat: no-repeat;
+}
+
+.col-sm-6 {
+    width: 35%;
+    margin: 7% auto;
+    float: none;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 21px;
+    font-size: 22.5px;
+    line-height: inherit;
+    color: #2C3E50;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    text-align: center;
+}
+
+legend img {
+    width: 70%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #51c447;
+    border-color: #51c447;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #51c447;
+    border-color: #51c447;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffffff;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+a {
+    color: #51c447;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #51c447;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.table>thead>tr>th {
+    padding: 5px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+}
+
+table>thead>tr>th,
+.table>thead:first-child>tr:first-child>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td {
+    border: 1px solid #cec5c5;
+    ;
+    background-color: #c9c9cb;
+    font-size: 16px;
+}
+
+.btn-primary:active:hover,
+.btn-primary:active:focus,
+.btn-primary:active.focus,
+.btn-primary.active:hover,
+.btn-primary.active:focus,
+.btn-primary.active.focus,
+.open>.btn-primary.dropdown-toggle:hover,
+.open>.btn-primary.dropdown-toggle:focus,
+.open>.btn-primary.dropdown-toggle.focus {
+    color: #fff;
+    background-color: #51c447;
+    border-color: #51c447;
+}
+
+.alert-success {
+    color: #fff;
+    background-color: #51c447;
+    border-color: #51c447;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #51c447;
+    border-radius: 0;
+}
+
+.table>tbody>tr>td {
+    border: 1px solid #cec5c5;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    color: #fff;
+    background-color: #51c447;
+    border-color: #51c447;
+}
+
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
+    outline: 5px auto #51c447;
+    outline-offset: -2px;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    color: #51c447;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+a:focus {
+    color: #51c447;
+    text-decoration: underline;
+}
+
+.border {
+    padding: 47px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 1px 20px 0 rgb(108 144 162 / 40%);
+    border-top: 5px solid;
+    border-top-color: #51c447;
+    margin-bottom: 50px;
+}
+
+.pagination>.disabled>span,
+.pagination>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>a:focus {
+    color: #ffffff;
+    cursor: not-allowed;
+    background-color: #51c447;
+    border-color: transparent;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 10px 15px;
+    margin-left: -1px;
+    line-height: 1.428571429;
+    color: #fff;
+    text-decoration: none;
+    background-color: #51c447;
+    border: 1px solid transparent;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span,
+.pagination>.active>span:hover,
+.pagination>.active>span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #95a5a6;
+    border-color: transparent;
+}
+
+.pagination>li>a:hover,
+.pagination>li>a:focus,
+.pagination>li>span:hover,
+.pagination>li>span:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #95a5a6;
+    border-color: transparent;
+}

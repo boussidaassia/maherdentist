@@ -19,7 +19,7 @@ title.login: تسجيل دخول امن
 title.post_list: قائمه المنشورات
 title.edit_post: "تعديل منشور #{id, number}"
 title.add_comment: اضافه تعليق
-title.comment_error: يوجد خطأفى نشر هذا التعليق
+title.comment_error: يوجد خطأ    
 title.edit_user: تعديل المستخدم
 title.change_password: تغير الباسوورد
 action.show: عرض
@@ -36,7 +36,9 @@ label.cancel: الغاء
 action.create_post: انشاء منشور جديد
 label.create_post: انشاء منشور
 label.save_and_create_new: حفظ وانشاء جديد
-action.back_to_list: الرجوع لقائمه المنشورات
+action.back_to_list: العودة إلى قائمة المرضى
+title.patient_new: إنشاء مريض جديد
+
 action.publish_comment: نشر تعليق
 action.publish_consultation: تسجيل
 action.sign_in: تسجيل الدخول
@@ -55,13 +57,16 @@ label.password: باسوورد
 label.current_password: الباسوورد الحالى
 label.new_password: باسوورد جديد
 label.new_password_confirm: تاكيد الباسوورد
-label.role: دور
-label.content: محتوى
-label.summary: ملخص
+label.role: الدور
+label.content: المحتوى
+label.summary: الملخص
 label.published_at: نشر فى
 label.added_at: انشأ فى
 label.tags: العلامات
-label.actions: أجراءات
+label.actions: الأجراءات
+comment.too_short: المحتوى قصير جدًا
+comment.too_long:  المحتوى طويل جدًا
+title.add_consultation: إضافة حصة
 title.post_new: انشاء المنشور
 action.edit_contents: عدل المحتويات
 menu.toggle_nav: تبديل التنقل
@@ -104,7 +109,26 @@ help.post_content: استخدم Markdown لتنسيق محتويات مشارك�
 help.comment_content: سيتم الإشراف على التعليقات التي لا تلتزم بمدونة قواعد السلوك الخاصة بنا.
 info.change_password: بعد تغيير كلمة المرور الخاصة بك ، سيتم تسجيل خروجك من التطبيق.
 rss.title: مدونه سيمفوني التجريبيه
+action.create_patient: إنشاء مريض جديد
+patient.deleted_successfully: تم حذف المريض بنجاح
+menu.patient_list:   قائمة المرضى
+label.gender: الجنس
+label.create_patient: إنشاء  
+title.edit_patient:  تعديل المريض رقم id 
 rss.description: أحدث المشاركات المنشورة على مدونه سيمفوني التجريبيه
 paginator.previous: السابق
 paginator.next: التالى
 paginator.current: (الحالى)
+label:
+  nom: اللقب
+  montantpaye:  المبلغ المدفوع
+  prenom:  الاسم
+  telephone: الهاتف
+  code: الرمز
+  montantTotal: المبلغ المدفوع بالكامل
+  montantDu: المبلغ المستحق بالكامل
+  docteur: الطبيب
+keep me logged in: حفظ البيانات
+action_delete: حذف
+title_application: PRODENTISTE
+

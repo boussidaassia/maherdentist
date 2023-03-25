@@ -26,6 +26,7 @@
   "build/fonts/fa-brands-400.ttf": "/build/fonts/fa-brands-400.527940b1.ttf",
   "build/images/glyphicons-halflings-regular.svg": "/build/images/glyphicons-halflings-regular.060b2710.svg",
   "build/fonts/fa-solid-900.woff": "/build/fonts/fa-solid-900.eeccf4f6.woff",
+  "build/images/login-v3.jpg": "/build/images/login-v3.92c0151e.jpg",
   "build/fonts/fa-brands-400.woff": "/build/fonts/fa-brands-400.2285773e.woff",
   "build/fonts/fa-solid-900.woff2": "/build/fonts/fa-solid-900.1551f4f6.woff2",
   "build/fonts/fa-brands-400.woff2": "/build/fonts/fa-brands-400.d878b0a6.woff2",
@@ -36,9 +37,5 @@
   "build/fonts/glyphicons-halflings-regular.eot": "/build/fonts/glyphicons-halflings-regular.5be1347c.eot",
   "build/fonts/glyphicons-halflings-regular.woff2": "/build/fonts/glyphicons-halflings-regular.be810be3.woff2",
   "build/fonts/fa-regular-400.woff": "/build/fonts/fa-regular-400.bb58e57c.woff",
-  "build/fonts/fa-regular-400.woff2": "/build/fonts/fa-regular-400.7a333762.woff2",
-  "build/images/dentiste.jpg": "/build/images/dentiste.0fdf67e7.jpg",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_bootstrap-sass_assets-d731d5.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_bootstrap-sass_assets-d731d5.js",
-  "build/images/login-v2.jpg": "/build/images/login-v2.ee698b6c.jpg",
-  "build/images/login-v3.jpg": "/build/images/login-v3.92c0151e.jpg"
+  "build/fonts/fa-regular-400.woff2": "/build/fonts/fa-regular-400.7a333762.woff2"
 }

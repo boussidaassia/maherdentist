@@ -55,6 +55,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::STRING)]
     private ?string $password = null;
 
+
+    #[ORM\Column(type: Types::STRING, nullable:true)]
+    private ?string $gender = null;
     /**
      * @var string[]
      */
@@ -122,6 +125,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): void
     {
         $this->password = $password;
+    }
+    
+
+    public function getGender (): ?string
+    {
+        return $this->gender;
+    }
+
+    public function setGender(string $gender): void
+    {
+        $this->gender = $gender;
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Patient;
 use App\Entity\Tag;
+use App\Entity\User;
 use App\Pagination\Paginator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -45,6 +46,17 @@ class PatientRepository extends ServiceEntityRepository
     public function findLatest(int $page = 1): Paginator
     {
         $qb = $this->createQueryBuilder('p')
+            ->orderBy('p.date', 'DESC')
+        ;
+
+        return (new Paginator($qb))->paginate($page);
+    }
+
+    public function findByDoc(int $page = 1, User $user): Paginator
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->where('p.docteur = :doc')
+            ->setParameter('doc' , $user)
             ->orderBy('p.date', 'DESC')
         ;
 

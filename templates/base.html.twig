@@ -18,6 +18,10 @@
         #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            {% if app.user and app.user.gender == 'female' %}
+ <link rel="stylesheet" type="text/css" href="{{ asset('css/female.css') }}"/>
+
+{% endif %}
         {% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

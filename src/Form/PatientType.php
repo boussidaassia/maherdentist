@@ -52,15 +52,17 @@ class PatientType extends AbstractType
             ->add('code', null, [
                 'label' => 'label.code',
             ])
-            ->add('montantTotal', null, [
-                'label' => 'label.montantTotal',
+            ->add('montantDu', null, [
+                'label' => 'label.montantDu',
             ])
+            
+            
             ->add('date', DateTimePickerType::class, [
                 'label' => 'label.published_at',
             ])
-//            ->add('docteur', null, [
-//                'label' => 'label.docteur',
-//            ])
+           ->add('docteur', null, [
+             'label' => 'label.docteur',
+         ])
         ;
     }
 

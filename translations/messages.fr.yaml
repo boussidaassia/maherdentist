@@ -17,7 +17,7 @@ title.controller_code: Code du contrôleur
 title.twig_template_code: Code du template Twig
 title.add_comment: Laisser un commentaire
 title.add_consultation: Ajouter consultation
-title.comment_error: Il y a eu une erreur lors de la publication de votre commentaire.
+title.comment_error: Il y a eu une erreur 
 title.edit_user: "Modifier l'utilisateur"
 title.change_password: Modifier le mot de passe
 action.show: Voir
@@ -118,6 +118,8 @@ patient.no_patients_found: Aucun patient trouvé.
 patient.created_successfully: "Patient créé avec succès !"
 patient.updated_successfully: "Patient mis à jour avec succès !"
 patient.deleted_successfully: "Patient supprimé avec succès !"
+consultation.deleted_successfully: "Consultation supprimé avec succès !"
+
 patient.search_for: Rechercher...
 patient.search_no_results: Aucun résultat
 menu.patient_list: Liste des patients
@@ -130,14 +132,20 @@ delete_patient_modal.body: Cette action ne peut pas être annulée.
 label.delete_patient: "Supprimer le patient"
 label.create_patient: Créer un patient
 action.create_patient: Créer un nouveau patient
+comment.too_short: Contenu trop court
+comment.too_long: Contenu trop long
 title.patient_list: Liste des patients
 title.edit_patient: "Modifier le patient Num: id "
 label:
   nom: Nom
+  montantpaye: Montant payé
   prenom: Prénom
   telephone: Téléphone
   code: Code
-  montantTotal: Montant Total
+  montantTotal: Montant Total Payé
+  montantDu: Montant Dû 
+  docteur: Docteur
 keep me logged in: Rester connecté
 action_delete: Supprimer
 title_application: PRODENTISTE
+label.gender: Genre
