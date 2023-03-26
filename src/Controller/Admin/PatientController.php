@@ -97,14 +97,14 @@ class PatientController extends AbstractController
     public function index(#[CurrentUser] User $user,Request $request, int $page, string $_format, PatientRepository $patients): Response
     {   $tag = null;
         $authorPatients = $patients->findBy(['docteur' => $user], ['date' => 'DESC']);
-        $latestPatients = $patients->findBydoc($page,$user);
+        $latestPatients = $patients->findBydoc( $user, $page );
         return $this->render('admin/patient/index.'.$_format.'.twig', [
             'paginator' => $latestPatients,
             'patients' => $authorPatients,
             'tagName' => $tag?->getName(),
         ]);
 
-        
+
         return $this->render('admin/patient/index.html.twig', ['patients' => $authorPatients]);
     }
 

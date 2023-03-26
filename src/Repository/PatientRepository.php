@@ -52,7 +52,7 @@ class PatientRepository extends ServiceEntityRepository
         return (new Paginator($qb))->paginate($page);
     }
 
-    public function findByDoc(int $page = 1, User $user): Paginator
+    public function findByDoc( User $user, int $page = 1 ): Paginator
     {
         $qb = $this->createQueryBuilder('p')
             ->where('p.docteur = :doc')
