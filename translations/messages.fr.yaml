@@ -17,7 +17,7 @@ title.controller_code: Code du contrôleur
 title.twig_template_code: Code du template Twig
 title.add_comment: Laisser un commentaire
 title.add_consultation: Ajouter consultation
-title.comment_error: Il y a eu une erreur 
+title.comment_error: Il y a eu une erreur
 title.edit_user: "Modifier l'utilisateur"
 title.change_password: Modifier le mot de passe
 action.show: Voir
@@ -143,8 +143,9 @@ label:
   telephone: Téléphone
   code: Code
   montantTotal: Montant Total Payé
-  montantDu: Montant Dû 
+  montantDu: Montant Dû
   docteur: Docteur
+  created_at: Créer le
 keep me logged in: Rester connecté
 action_delete: Supprimer
 title_application: PRODENTISTE

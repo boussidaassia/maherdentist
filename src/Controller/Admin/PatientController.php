@@ -96,6 +96,7 @@ class PatientController extends AbstractController
     #[Cache(smaxage: 10)]
     public function index(#[CurrentUser] User $user,Request $request, int $page, string $_format, PatientRepository $patients): Response
     {   $tag = null;
+        /** @var Patient[] $authorPatients */
         $authorPatients = $patients->findBy(['docteur' => $user], ['date' => 'DESC']);
         $latestPatients = $patients->findBydoc( $user, $page );
         return $this->render('admin/patient/index.'.$_format.'.twig', [
@@ -105,7 +106,7 @@ class PatientController extends AbstractController
         ]);
 
 
-        return $this->render('admin/patient/index.html.twig', ['patients' => $authorPatients]);
+//        return $this->render('admin/patient/index.html.twig', ['patients' => $authorPatients]);
     }
 
     /**

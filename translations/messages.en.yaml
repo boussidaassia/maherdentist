@@ -20,7 +20,7 @@ title.login: Secure Sign in
 title.post_list: Patient List
 title.edit_patient: "Edit patient Num: id"
 title.add_comment: Add a comment
-title.comment_error: There was an error 
+title.comment_error: There was an error
 title.edit_user: Edit user
 title.change_password: Change password
 action.show: Show
@@ -123,7 +123,6 @@ label:
   montantTotal: Total Amount Paid
   montantDu: Amount
   docteur: Doctor
- 
-
+  created_at: Créer le
 action_delete: Delete
 label.gender: Gender

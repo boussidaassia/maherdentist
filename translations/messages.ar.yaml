@@ -19,7 +19,7 @@ title.login: تسجيل دخول امن
 title.post_list: قائمه المنشورات
 title.edit_post: "تعديل منشور #{id, number}"
 title.add_comment: اضافه تعليق
-title.comment_error: يوجد خطأ    
+title.comment_error: يوجد خطأ
 title.edit_user: تعديل المستخدم
 title.change_password: تغير الباسوورد
 action.show: عرض
@@ -113,8 +113,8 @@ action.create_patient: إنشاء مريض جديد
 patient.deleted_successfully: تم حذف المريض بنجاح
 menu.patient_list:   قائمة المرضى
 label.gender: الجنس
-label.create_patient: إنشاء  
-title.edit_patient:  تعديل المريض رقم id 
+label.create_patient: إنشاء
+title.edit_patient:  تعديل المريض رقم id
 rss.description: أحدث المشاركات المنشورة على مدونه سيمفوني التجريبيه
 paginator.previous: السابق
 paginator.next: التالى
@@ -128,6 +128,7 @@ label:
   montantTotal: المبلغ المدفوع بالكامل
   montantDu: المبلغ المستحق بالكامل
   docteur: الطبيب
+  created_at: تاريخ الإضافة
 keep me logged in: حفظ البيانات
 action_delete: حذف
 title_application: PRODENTISTE

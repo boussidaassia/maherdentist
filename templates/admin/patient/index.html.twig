@@ -27,9 +27,10 @@
                 <th scope="col">{{ 'label.montantDu'|trans }}</th>
                 <th scope="col">{{ 'label.montantTotal'|trans }}</th>
                 <th scope="col">{{ 'label.docteur'|trans }}</th>
+                <th scope="col">{{ 'patient.num_consultations'|trans }}</th>
 
 
-                <th scope="col"><i class="fa fa-calendar" aria-hidden="true"></i> {{ 'label.published_at'|trans }}</th>
+                <th scope="col"><i class="fa fa-calendar" aria-hidden="true"></i> {{ 'label.created_at'|trans }}</th>
                 <th scope="col" class="text-right">
                     action
                 </th>
@@ -49,6 +50,7 @@
                     <td>{{ patient.montantDu }}</td>
                     <td>{{ patient.montantTotal }}</td>
                     <td>{{ patient.docteur }}</td>
+                    <td>{{ patient.consultations|length }}</td>
 
 
 

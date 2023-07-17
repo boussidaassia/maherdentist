@@ -30,9 +30,9 @@
         be able to add a consultation.
         See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
            #}
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                          {{ render(controller('App\\Controller\\Admin\\PatientController::consultationForm', {'id': patient.id})) }}
 
+           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+               {{ render(controller('App\\Controller\\Admin\\PatientController::consultationForm', {'id': patient.id})) }}
            {% endif %}
        </div>
 
